@@ -1,11 +1,11 @@
 const express = require('express');
+
 // const morgan = require('morgan');
 // const helmet = require('helmet');
 
-require('dotenv').config();
-
 const middlewares = require('./middlewares');
 const apis = require('./apis');
+
 
 const app = express();
 // app.set('trust proxy', 1);
@@ -20,9 +20,10 @@ app.get('/', (req, res) => {
   });
 });
 
-app.use('/api/v1', apis);
 
+app.use('/api/v1', apis);
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);
+
 
 module.exports = app;
