@@ -8,6 +8,4 @@ let options = {
     useNewUrlParser: true
 }
 
- console.log(process.env.DB_CONNECT);
-
 module.exports = mongoose.connect(process.env.DB_CONNECT,options,postConectionCallBack())
