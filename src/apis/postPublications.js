@@ -40,7 +40,8 @@ router.post('/',async (req,res)=> {
 
     const post = await new Post({
       title : req.body.title,
-      description : req.body.description})
+      description : req.body.description
+    })
     
     try {
         const savePost = await post.save()

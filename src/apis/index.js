@@ -4,7 +4,8 @@ const express = require('express');
 
 // get all the routes
 const apiService = require('./apiService');
-const postPublications = require('./postPublications');
+const authService = require('./routes/auth');
+const postPublicationsService = require('./postPublications');
 
 const router = express.Router();
 
@@ -14,7 +15,8 @@ router.get('/', (req, res) => {
   });
 });
 
+router.use('/auth', authService)
 router.use('/apiservice', apiService);
-router.use('/postPublications', postPublications);
+router.use('/postPublications', postPublicationsService);
 
 module.exports = router;
