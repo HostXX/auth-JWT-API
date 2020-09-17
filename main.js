@@ -5,7 +5,7 @@ require('dotenv/config')
 
 const port = process.env.PORT || 5000;
 
-// impoting db conection instance
+// importing db conection instance
 
 require('./src/apis/database/databaseConection')
 
