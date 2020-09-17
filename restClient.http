@@ -1,0 +1,23 @@
+POST http://localhost:3001/api/v1/auth/singin HTTP/1.1
+content-type: application/json
+
+{
+    "email": "mmg@gmail.com",
+    "name": "Jhon",
+    "surname": "Smith",
+    "password": "testpassword"
+}
+
+
+###
+
+POST http://localhost:3001/api/v1/auth/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "mmg@gmail.com",
+    "password": "testpassword"
+}
+
+
+

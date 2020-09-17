@@ -1,9 +1,11 @@
 const nJwt = require('njwt')
 
-function generateJWT(claims,secret) {
+function generateJWT(claims,secret,expTime) {
     
     // const jwt = nJwt.create(claims,String(secret),"HS256")
-     var rawJwt = nJwt.create(claims,secret);
+     let rawJwt = nJwt.create(claims,secret);
+     rawJwt.setExpiration(new Date().getTime() + expTime)
+
      // console.log('token no compacto=======================================================')
      // console.log(jwt);
      const tokenCompact = rawJwt.compact()
